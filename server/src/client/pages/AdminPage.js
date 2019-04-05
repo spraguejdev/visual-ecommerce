@@ -24,10 +24,15 @@ class AdminPage extends Component {
   }
 }
 
+function loadData(store) {
+  return store.dispatch(fetchProducts());
+}
+
 function mapStateToProps(state) {
   return { products: state.products };
 }
 
+// export { loadData };
 export default connect(
   mapStateToProps,
   { fetchProducts }
