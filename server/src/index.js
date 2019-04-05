@@ -1,3 +1,4 @@
+import "babel-polyfill";
 import express from "express";
 import renderer from "./client/helpers/renderer";
 import serverStore from "./client/helpers/serverStore";
@@ -6,7 +7,9 @@ const app = express();
 
 app.use(express.static("public"));
 app.get("*", (req, res) => {
-  res.send(renderer(req));
+  const store = serverStore();
+
+  res.send(renderer(req, store));
 });
 
 app.listen(3002, () => {
