@@ -33,7 +33,10 @@ function mapStateToProps(state) {
 }
 
 // export { loadData };
-export default connect(
-  mapStateToProps,
-  { fetchProducts }
-)(AdminPage);
+export default {
+  component: connect(
+    mapStateToProps,
+    { fetchProducts }
+  )(AdminPage),
+  loadData
+};
