@@ -1,3 +1,4 @@
+import "babel-polyfill";
 import express from "express";
 import renderer from "./client/helpers/renderer";
 import serverStore from "./client/helpers/serverStore";
