@@ -2,10 +2,12 @@ var express = require("express");
 var bodyParser = require("body-parser");
 const controllers = require("./controllers.js");
 const db = require("./database/index.js");
+const cors = require("cors");
 
 var app = express();
 const port = 3003;
 
+app.use(cors());
 app.use(express.static(__dirname + "/../client/dist"));
 app.use(bodyParser.json());
 
