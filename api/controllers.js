@@ -2,7 +2,6 @@ const model = require("./database/models/products");
 module.exports = {
   getProducts: (req, res) => {
     model.fetchProducts((err, data) => {
-      console.log("made it to the controller");
       if (err) res.status(404).send(err);
       res.status(200).send(data);
     });
