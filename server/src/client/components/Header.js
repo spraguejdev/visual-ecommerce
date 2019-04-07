@@ -1,10 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 
-export default () => {
+const Header = () => {
   return (
     <div>
       <Link to="/">99 Problems</Link>
     </div>
   );
 };
+
+// The only property we care about is whether or not the user is authencated
+function mapStateToProps({ auth }) {
+  return { auth };
+}
+export default connect(mapStateToProps)(Header);
