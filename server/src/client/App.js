@@ -8,11 +8,19 @@ import thunk from "redux-thunk";
 import { Provider } from "react-redux";
 import reducers from "./reducers/combineReducers";
 import { renderRoutes } from "react-router-config";
+import axios from "axios";
+
+// Custom instance of axios
+const axiosInstance = axios.create({
+  // This will prepend to the endpoint when this function is called.
+  baseURL: "/api"
+});
 
 const store = createStore(
   reducers,
   window.INITIAL_STATE,
-  applyMiddleware(thunk)
+  // The the axios instance to all of our action creators
+  applyMiddleware(thunk.withExtraArgument(axiosInstance))
 );
 
 ReactDOM.hydrate(
