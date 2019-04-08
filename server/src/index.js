@@ -20,6 +20,7 @@ app.use(
 );
 
 app.use(express.static("public"));
+// Route handler
 app.get("*", (req, res) => {
   // Create our server Store here
   // Pass in our req objet to the createStore function to we can use the cookie
@@ -30,7 +31,17 @@ app.get("*", (req, res) => {
   });
 
   Promise.all(promises).then(() => {
-    res.send(renderer(req, store));
+    // Define our context object to use in the static router and pass into the renderer function
+    const context = {};
+
+    // Create our html template
+    const content = renderer(req, store, context);
+
+    // Check to see if there is a property of notFound in our context object, if so, set status to 404
+    if (context.notFound) {
+      res.status(404);
+    }
+    res.send(content);
   });
 });
 
