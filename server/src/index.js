@@ -13,7 +13,7 @@ app.use(
   "/api",
   proxy("http://react-ssr-api.herokuapp.com", {
     proxyReqOptDecorator(opts) {
-      opts.headers["x-forwarded-hots"] = "localhost:3000";
+      opts.headers["x-forwarded-host"] = "localhost:3000";
       return opts;
     }
   })
@@ -34,6 +34,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3002, () => {
+app.listen(3000, () => {
   console.log("Hido ho, mate!");
 });
