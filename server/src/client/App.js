@@ -14,6 +14,6 @@ const App = ({ route }) => {
 
 export default {
   component: App,
-  // Gets called with our redux store and the dispatch function, return the results of a dispatch function
-  loadData: ({ dispatch }) => dispatch(fetchCurrentUser)
+  // Load data gets called with our redux store and the dispatch function, return the results of a dispatch function
+  loadData: ({ dispatch }) => dispatch(fetchCurrentUser())
 };
