@@ -58,3 +58,4 @@ build/bundle.js
 /build
 /public/bundle.js
 public/
+/src/client/components/HeaderTwo.js
