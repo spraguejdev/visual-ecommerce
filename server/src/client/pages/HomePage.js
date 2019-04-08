@@ -2,11 +2,13 @@ import React from "react";
 
 const Home = () => {
   return (
-    <div>
-      <div>Im the very BEST home page!</div>
-      <button onClick={() => console.log("Button was clicked!")}>
-        Click Me!
-      </button>
+    <div className="jumbotron jumbotron-fluid">
+      <div className="container">
+        <h1 className="display-4 text-center">Welcome!</h1>
+        <p className="lead text-center">
+          Checkout these awesome Server Side Rendering Features
+        </p>
+      </div>
     </div>
   );
 };
