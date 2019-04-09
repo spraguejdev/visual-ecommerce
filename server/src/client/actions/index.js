@@ -3,6 +3,7 @@ import axios from "axios";
 export const FETCH_USERS = "fetch_users";
 export const FETCH_PRODUCTS = "fetch_products";
 export const FETCH_CURRENT_USER = "fetch_current_user";
+export const FETCH_ADMINS = "fetch_admins";
 
 export const fetchUsers = () => async (dispatch, getState, api) => {
   // We no longer have to use the entire endpoint
@@ -29,6 +30,17 @@ export const fetchProducts = () => async dispatch => {
   const res = await axios.get("http://localhost:3003/products");
   dispatch({
     type: FETCH_PRODUCTS,
+    payload: res
+  });
+};
+
+// returns a asynce reduct function
+export const fetchAdmins = () => async (dispatch, getState, api) => {
+  // make request to admins route
+  const res = await api.get("/admins");
+
+  dispatch({
+    type: FETCH_ADMINS,
     payload: res
   });
 };
