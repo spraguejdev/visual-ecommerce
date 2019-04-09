@@ -353,7 +353,7 @@ var _expressHttpProxy2 = _interopRequireDefault(_expressHttpProxy);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var port = process.env.PORT || 3000;
+var port = 3000;
 
 var app = (0, _express2.default)();
 
