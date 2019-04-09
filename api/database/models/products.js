@@ -13,9 +13,9 @@ var Item = mongoose.model("Item", itemSchema);
 
 module.exports = {
   fetchProducts: callback => {
-    Item.find((err, data) => {
+    Item.find((err, dat) => {
       if (err) return callback(err);
-      callback(null, data);
+      callback(null, dat);
     });
   },
   writeUpdate: (data, callback) => {
