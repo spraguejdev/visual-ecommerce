@@ -360,7 +360,7 @@ var app = (0, _express2.default)();
 // Proxy for api, any route trying to access this route will be sent off to the api
 app.use("/api", (0, _expressHttpProxy2.default)("http://react-ssr-api.herokuapp.com", {
   proxyReqOptDecorator: function proxyReqOptDecorator(opts) {
-    opts.headers["x-forwarded-host"] = "localhost:3000";
+    opts.headers["x-forwarded-host"] = "https://visual-ecommerce.herokuapp.com/";
     return opts;
   }
 }));
