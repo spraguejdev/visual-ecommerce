@@ -6,7 +6,6 @@ export default ChildComponent => {
   class RequireAuth extends Component {
     render() {
       switch (this.props.auth) {
-        // If you are not loged in, return the user
         case false:
           return <Redirect to="/" />;
         case null:
@@ -16,9 +15,10 @@ export default ChildComponent => {
       }
     }
   }
+
   function mapStateToProps({ auth }) {
     return { auth };
   }
-  // We use connect helper here because the RequireAuth component needs to be aware of the user's authenication status
+
   return connect(mapStateToProps)(RequireAuth);
 };

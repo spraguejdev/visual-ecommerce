@@ -36,9 +36,7 @@ export const fetchProducts = () => async dispatch => {
   });
 };
 
-// returns a asynce reduct function
 export const fetchAdmins = () => async (dispatch, getState, api) => {
-  // make request to admins route
   const res = await api.get("/admins");
 
   dispatch({

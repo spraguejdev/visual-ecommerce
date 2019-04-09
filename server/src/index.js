@@ -15,7 +15,6 @@ app.use(
   "/api",
   proxy("http://react-ssr-api.herokuapp.com", {
     proxyReqOptDecorator(opts) {
-      console.log(opts.headers);
       opts.headers["x-forwarded-host"] = "localhost:3000";
       return opts;
     }
@@ -47,19 +46,17 @@ app.get("*", (req, res) => {
       }
     });
 
-  // After all of our requests are completed, send the response to the browser
   Promise.all(promises).then(() => {
-    // Define our context object to use in the static router and pass into the renderer function
     const context = {};
-    // Create our html template
     const content = renderer(req, store, context);
+
     if (context.url) {
       return res.redirect(301, context.url);
     }
-    // Check to see if there is a property of notFound in our context object, if so, set status to 404
     if (context.notFound) {
       res.status(404);
     }
+
     res.send(content);
   });
 });
