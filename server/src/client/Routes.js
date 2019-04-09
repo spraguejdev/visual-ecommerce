@@ -1,8 +1,10 @@
 import React from "react";
 import HomePage from "./pages/HomePage";
 import UsersListPage from "./pages/UsersListPage";
-import AdminPage from "./pages/AdminPage";
+import AdminProductsPage from "./pages/AdminProductsPage";
 import App from "./App";
+import NotFoundPage from "./pages/NotFoundPage";
+import AdminsListPage from "./pages/AdminsListPage";
 
 // App is the component that will be shown on all pages
 export default [
@@ -15,14 +17,21 @@ export default [
         exact: true
       },
       {
+        ...AdminsListPage,
+        path: "/admins"
+      },
+      {
         ...UsersListPage,
         path: "/users",
         exact: true
       },
       {
-        ...AdminPage,
+        ...AdminProductsPage,
         path: "/products",
         exact: true
+      },
+      {
+        ...NotFoundPage
       }
     ]
   }
