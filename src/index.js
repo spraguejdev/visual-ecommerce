@@ -15,8 +15,7 @@ app.use(
   "/api",
   proxy("http://react-ssr-api.herokuapp.com", {
     proxyReqOptDecorator(opts) {
-      opts.headers["x-forwarded-host"] =
-        "https://visual-ecommerce.herokuapp.com/";
+      opts.headers["x-forwarded-host"] = "visual-ecommerce.herokuapp.com/";
       return opts;
     }
   })
