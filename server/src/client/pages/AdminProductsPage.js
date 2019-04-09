@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchProducts } from "../actions/index";
 
-class AdminPage extends Component {
+class AdminProductPage extends Component {
   constructor(props) {
     super(props);
   }
@@ -32,11 +32,10 @@ function mapStateToProps(state) {
   return { products: state.products };
 }
 
-// export { loadData };
 export default {
   component: connect(
     mapStateToProps,
     { fetchProducts }
-  )(AdminPage),
+  )(AdminProductPage),
   loadData
 };
