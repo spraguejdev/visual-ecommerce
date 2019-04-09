@@ -27,7 +27,9 @@ export const fetchCurrentUser = () => async (dispatch, getState, api) => {
 // When redux thunk calls the function, (atuomaticall invoke), it will now have two extra arguments.
 export const fetchProducts = () => async dispatch => {
   // rather than using the base axio library, we use the custom instance
-  const res = await axios.get("http://localhost:3003/products");
+  const res = await axios.get(
+    "http://visual-commerce-api.herokuapp.com/products"
+  );
   dispatch({
     type: FETCH_PRODUCTS,
     payload: res

@@ -6,6 +6,8 @@ import { matchRoutes } from "react-router-config";
 import Routes from "./client/Routes";
 import proxy from "express-http-proxy";
 
+const port = process.env.PORT || 3000;
+
 const app = express();
 
 // Proxy for api, any route trying to access this route will be sent off to the api
@@ -13,6 +15,7 @@ app.use(
   "/api",
   proxy("http://react-ssr-api.herokuapp.com", {
     proxyReqOptDecorator(opts) {
+      console.log(opts.headers);
       opts.headers["x-forwarded-host"] = "localhost:3000";
       return opts;
     }
@@ -61,6 +64,6 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("Hido ho, mate!");
 });
