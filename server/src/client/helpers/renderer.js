@@ -6,10 +6,12 @@ import { Provider } from "react-redux";
 import { renderRoutes } from "react-router-config";
 import serialize from "serialize-javascript";
 
-export default (req, store) => {
+// Initialize a static server to be used with our server side codebase
+export default (req, store, context) => {
   const content = renderToString(
     <Provider store={store}>
-      <StaticRouter location={req.path} context={{}}>
+      {/* Context gives us the ability to notice error handling, take it and pass it down to all of the renderd components*/}
+      <StaticRouter location={req.path} context={context}>
         <div>{renderRoutes(Routes)}</div>
       </StaticRouter>
     </Provider>
