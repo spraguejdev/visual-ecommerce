@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 
 const Header = ({ auth }) => {
-  console.log("this is the auth: ", auth);
   // Look at the value of auth, and show appropiate button
   const authButton = auth ? (
     // We are using making a request to the api, we want it to be proxied though our renderer server, so we set up our cookies with the renderer server and not the api
