@@ -10,7 +10,7 @@ class PropertyCard extends React.Component {
       disableMinusButton: false
     };
     this.postItemUpdate = this.postItemUpdate.bind(this);
-    this.getSingleItem = this.getSingleItem.bind(this);
+    // this.getSingleItem = this.getSingleItem.bind(this);
   }
 
   componentDidMount() {
@@ -19,16 +19,16 @@ class PropertyCard extends React.Component {
     this.setState(newState);
   }
 
-  getSingleItem(product_id) {
-    Axios.get("/product/single-item", {
-      params: { product_id: product_id }
-    }).then(res => {
-      var newState = Object.assign(this.state);
-      newState.products = res.data;
-      console.log("this is response data: ", res);
-      this.setState(newState);
-    });
-  }
+  // getSingleItem(product_id) {
+  //   Axios.get("/product/single-item", {
+  //     params: { product_id: product_id }
+  //   }).then(res => {
+  //     var newState = Object.assign(this.state);
+  //     newState.products = res.data;
+  //     console.log("this is response data: ", res);
+  //     this.setState(newState);
+  //   });
+  // }
 
   postItemUpdate(currentProduct) {
     Axios.put("/product-update", currentProduct).then(data => {
