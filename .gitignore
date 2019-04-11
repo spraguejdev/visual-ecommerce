@@ -54,7 +54,5 @@ typings/
 # Compiled Dirs (http://nodejs.org/api/addons.html)
 node_modules/
 /node_modules
-build/bundle.js
-/build
-/public/bundle.js
-public/
+
+node_modules

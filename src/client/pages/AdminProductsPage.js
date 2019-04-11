@@ -12,11 +12,18 @@ class AdminProductPage extends Component {
   }
   render() {
     return (
-      <div>
-        Here is a big list of products
-        <ul>
+      <div className="container text-center" style={{ maxWidth: "500px" }}>
+        <h1 style={{ padding: "20px 0 20px 0 " }}>
+          {" "}
+          Here Is A Big List Of Products
+        </h1>
+        <ul className="list-group">
           {this.props.products.map((product, i) => {
-            return <li key={i}>{product.name}</li>;
+            return (
+              <li className="list-group-item" key={i}>
+                {product.name}
+              </li>
+            );
           })}
         </ul>
       </div>
