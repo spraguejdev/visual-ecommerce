@@ -273,9 +273,9 @@ var _UsersListPage = __webpack_require__(14);
 
 var _UsersListPage2 = _interopRequireDefault(_UsersListPage);
 
-var _AdminProductsPage = __webpack_require__(15);
+var _ProductsPage = __webpack_require__(15);
 
-var _AdminProductsPage2 = _interopRequireDefault(_AdminProductsPage);
+var _ProductsPage2 = _interopRequireDefault(_ProductsPage);
 
 var _App = __webpack_require__(16);
 
@@ -302,7 +302,7 @@ exports.default = [_extends({}, _App2.default, {
   }), _extends({}, _UsersListPage2.default, {
     path: "/users",
     exact: true
-  }), _extends({}, _AdminProductsPage2.default, {
+  }), _extends({}, _ProductsPage2.default, {
     path: "/products",
     exact: true
   }), _extends({}, _NotFoundPage2.default)]
@@ -515,7 +515,7 @@ var Home = function Home() {
         _react2.default.createElement(
           "h3",
           { className: "text-center" },
-          "Built with"
+          "Built With"
         ),
         _react2.default.createElement(
           "div",
@@ -693,16 +693,16 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var AdminProductPage = function (_Component) {
-  _inherits(AdminProductPage, _Component);
+var ProductsPage = function (_Component) {
+  _inherits(ProductsPage, _Component);
 
-  function AdminProductPage(props) {
-    _classCallCheck(this, AdminProductPage);
+  function ProductsPage(props) {
+    _classCallCheck(this, ProductsPage);
 
-    return _possibleConstructorReturn(this, (AdminProductPage.__proto__ || Object.getPrototypeOf(AdminProductPage)).call(this, props));
+    return _possibleConstructorReturn(this, (ProductsPage.__proto__ || Object.getPrototypeOf(ProductsPage)).call(this, props));
   }
 
-  _createClass(AdminProductPage, [{
+  _createClass(ProductsPage, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchProducts();
@@ -734,7 +734,7 @@ var AdminProductPage = function (_Component) {
     }
   }]);
 
-  return AdminProductPage;
+  return ProductsPage;
 }(_react.Component);
 
 function loadData(store) {
@@ -746,7 +746,7 @@ function mapStateToProps(state) {
 }
 
 exports.default = {
-  component: (0, _reactRedux.connect)(mapStateToProps, { fetchProducts: _index.fetchProducts })(AdminProductPage),
+  component: (0, _reactRedux.connect)(mapStateToProps, { fetchProducts: _index.fetchProducts })(ProductsPage),
   loadData: loadData
 };
 
@@ -978,15 +978,15 @@ var AdminsListPage = function (_Component) {
   _createClass(AdminsListPage, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      this.props.fetchAdmins();
+      this.props.fetchProducts();
     }
   }, {
     key: "renderAdmins",
     value: function renderAdmins() {
-      return this.props.admins.map(function (admin) {
+      return this.props.products.map(function (admin) {
         return _react2.default.createElement(
           "li",
-          { classNam: "list-group-item", key: admin.id },
+          { className: "list-group-item", key: admin.id },
           admin.name
         );
       });
@@ -994,18 +994,49 @@ var AdminsListPage = function (_Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       return _react2.default.createElement(
         "div",
-        { className: "container text-center", style: { maxWidth: "500px" } },
+        { className: "h-100" },
         _react2.default.createElement(
-          "h1",
-          { style: { padding: "20px 0 20px 0 " } },
-          "Protected list of admins"
-        ),
-        _react2.default.createElement(
-          "ul",
-          { className: "list-groupo" },
-          this.renderAdmins()
+          "div",
+          { className: "row h-100" },
+          _react2.default.createElement(
+            "div",
+            { className: "col-2 no-flow side-bar text-center" },
+            _react2.default.createElement("i", { className: "far fa-user-circle", id: "admin" }),
+            _react2.default.createElement(
+              "p3",
+              { id: "admin" },
+              " Admin"
+            )
+          ),
+          _react2.default.createElement(
+            "div",
+            { className: "col-10 no-float " },
+            _react2.default.createElement("i", { className: "fas fa-tachometer-alt" }),
+            _react2.default.createElement(
+              "p3",
+              { id: "dashboard" },
+              " Dashboard"
+            ),
+            _react2.default.createElement(
+              "div",
+              { className: "row" },
+              _react2.default.createElement(AddProductCard, {
+                handleAddProductClick: this.handleAddProductClick,
+                getProducts: this.getProducts
+              }),
+              this.props.products.map(function (item, i) {
+                return _react2.default.createElement(ProductCard, {
+                  item: item,
+                  key: i,
+                  handleUpdate: _this2.getProducts
+                });
+              })
+            )
+          )
         )
       );
     }
@@ -1015,16 +1046,16 @@ var AdminsListPage = function (_Component) {
 }(_react.Component);
 
 function mapStateToProps(_ref) {
-  var admins = _ref.admins;
+  var products = _ref.products;
 
-  return { admins: admins };
+  return { products: products };
 }
 
 exports.default = {
-  component: (0, _reactRedux.connect)(mapStateToProps, { fetchAdmins: _index.fetchAdmins })((0, _requireAuth2.default)(AdminsListPage)),
+  component: (0, _reactRedux.connect)(mapStateToProps, { fetchProducts: _index.fetchProducts })((0, _requireAuth2.default)(AdminsListPage)),
   loadData: function loadData(_ref2) {
     var dispatch = _ref2.dispatch;
-    return dispatch((0, _index.fetchAdmins)());
+    return dispatch((0, _index.fetchProducts)());
   }
 };
 
