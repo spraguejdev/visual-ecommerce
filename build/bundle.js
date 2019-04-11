@@ -510,8 +510,66 @@ var Home = function Home() {
       ),
       _react2.default.createElement(
         "p",
-        { className: "lead text-center" },
-        "Checkout these awesome Server Side Rendering Features"
+        { className: "lead text-center", style: { paddingBottom: "20px" } },
+        "Checkout these awesome Server Side Rendering Features!",
+        _react2.default.createElement(
+          "h3",
+          { className: "text-center" },
+          "Built with"
+        ),
+        _react2.default.createElement(
+          "div",
+          { className: "container", style: { maxWidth: "500px" } },
+          _react2.default.createElement(
+            "ul",
+            { className: "list-group text-center" },
+            _react2.default.createElement(
+              "li",
+              { className: "list-group-item" },
+              "Javascript ES6"
+            ),
+            _react2.default.createElement(
+              "li",
+              { className: "list-group-item" },
+              "React"
+            ),
+            _react2.default.createElement(
+              "li",
+              { className: "list-group-item" },
+              "Redux"
+            ),
+            _react2.default.createElement(
+              "li",
+              { className: "list-group-item" },
+              "React Router"
+            ),
+            _react2.default.createElement(
+              "li",
+              { className: "list-group-item" },
+              "Express"
+            ),
+            _react2.default.createElement(
+              "li",
+              { className: "list-group-item" },
+              "Node.js"
+            ),
+            _react2.default.createElement(
+              "li",
+              { className: "list-group-item" },
+              "Mongodb"
+            ),
+            _react2.default.createElement(
+              "li",
+              { className: "list-group-item" },
+              "Bootstrap"
+            ),
+            _react2.default.createElement(
+              "li",
+              { className: "list-group-item" },
+              "OAuth Authenication"
+            )
+          )
+        )
       )
     )
   );
@@ -569,15 +627,19 @@ var UsersList = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         "div",
-        null,
-        "Here is a big list of users",
+        { className: "container text-center", style: { maxWidth: "500px" } },
+        _react2.default.createElement(
+          "h1",
+          { style: { padding: "20px 0 20px 0 " } },
+          "Here Is A big List Of Users"
+        ),
         _react2.default.createElement(
           "ul",
-          null,
+          { className: "list-group" },
           this.props.users.map(function (user) {
             return _react2.default.createElement(
               "li",
-              { key: user.id },
+              { className: "list-group-item", key: user.id },
               user.name
             );
           })
@@ -650,15 +712,20 @@ var AdminProductPage = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         "div",
-        null,
-        "Here is a big list of products",
+        { className: "container text-center", style: { maxWidth: "500px" } },
+        _react2.default.createElement(
+          "h1",
+          { style: { padding: "20px 0 20px 0 " } },
+          " ",
+          "Here Is A Big List Of Products"
+        ),
         _react2.default.createElement(
           "ul",
-          null,
+          { className: "list-group" },
           this.props.products.map(function (product, i) {
             return _react2.default.createElement(
               "li",
-              { key: i },
+              { className: "list-group-item", key: i },
               product.name
             );
           })
@@ -919,7 +986,7 @@ var AdminsListPage = function (_Component) {
       return this.props.admins.map(function (admin) {
         return _react2.default.createElement(
           "li",
-          { key: admin.id },
+          { classNam: "list-group-item", key: admin.id },
           admin.name
         );
       });
@@ -929,15 +996,15 @@ var AdminsListPage = function (_Component) {
     value: function render() {
       return _react2.default.createElement(
         "div",
-        null,
+        { className: "container text-center", style: { maxWidth: "500px" } },
         _react2.default.createElement(
-          "h3",
-          null,
+          "h1",
+          { style: { padding: "20px 0 20px 0 " } },
           "Protected list of admins"
         ),
         _react2.default.createElement(
           "ul",
-          null,
+          { className: "list-groupo" },
           this.renderAdmins()
         )
       );
