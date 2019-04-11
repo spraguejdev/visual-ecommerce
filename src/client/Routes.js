@@ -1,7 +1,7 @@
 import React from "react";
 import HomePage from "./pages/HomePage";
 import UsersListPage from "./pages/UsersListPage";
-import AdminProductsPage from "./pages/AdminProductsPage";
+import ProductsPage from "./pages/ProductsPage";
 import App from "./App";
 import NotFoundPage from "./pages/NotFoundPage";
 import AdminsListPage from "./pages/AdminsListPage";
@@ -26,7 +26,7 @@ export default [
         exact: true
       },
       {
-        ...AdminProductsPage,
+        ...ProductsPage,
         path: "/products",
         exact: true
       },
