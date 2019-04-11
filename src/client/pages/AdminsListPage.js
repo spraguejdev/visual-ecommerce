@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchProducts } from "../actions/index";
 import requireAuth from "../components/hocs/requireAuth";
+import AddProductCard from "../components/AddProductCard";
+import ProductCard from "../components/ProductCard";
 
 class AdminsListPage extends Component {
   componentDidMount() {
@@ -31,10 +33,6 @@ class AdminsListPage extends Component {
             <p3 id="dashboard"> Dashboard</p3>
             <div className="row">
               {/* product skelton */}
-              <AddProductCard
-                handleAddProductClick={this.handleAddProductClick}
-                getProducts={this.getProducts}
-              />
               {this.props.products.map((item, i) => (
                 <ProductCard
                   item={item}
@@ -61,3 +59,7 @@ export default {
   )(requireAuth(AdminsListPage)),
   loadData: ({ dispatch }) => dispatch(fetchProducts())
 };
+// <AddProductCard
+// handleAddProductClick={this.handleAddProductClick}
+// getProducts={this.getProducts}
+// />
