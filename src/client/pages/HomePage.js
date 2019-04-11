@@ -7,7 +7,7 @@ const Home = () => {
         <h1 className="display-4 text-center">Welcome!</h1>
         <p className="lead text-center" style={{ paddingBottom: "20px" }}>
           Checkout these awesome Server Side Rendering Features!
-          <h3 className="text-center">Built with</h3>
+          <h3 className="text-center">Built With</h3>
           <div className="container" style={{ maxWidth: "500px" }}>
             <ul className="list-group text-center">
               <li className="list-group-item">Javascript ES6</li>
