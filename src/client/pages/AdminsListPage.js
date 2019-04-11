@@ -1,17 +1,17 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { fetchAdmins } from "../actions/index";
+import { fetchProducts } from "../actions/index";
 import requireAuth from "../components/hocs/requireAuth";
 
 class AdminsListPage extends Component {
   componentDidMount() {
-    this.props.fetchAdmins();
+    this.props.fetchProducts();
   }
 
   renderAdmins() {
-    return this.props.admins.map(admin => {
+    return this.props.products.map(admin => {
       return (
-        <li classNam="list-group-item" key={admin.id}>
+        <li className="list-group-item" key={admin.id}>
           {admin.name}
         </li>
       );
@@ -20,22 +20,44 @@ class AdminsListPage extends Component {
 
   render() {
     return (
-      <div className="container text-center" style={{ maxWidth: "500px" }}>
-        <h1 style={{ padding: "20px 0 20px 0 " }}>Protected list of admins</h1>
-        <ul className="list-groupo">{this.renderAdmins()}</ul>
+      <div className="h-100">
+        <div className="row h-100">
+          <div className="col-2 no-flow side-bar text-center">
+            <i className="far fa-user-circle" id="admin" />
+            <p3 id="admin"> Admin</p3>
+          </div>
+          <div className="col-10 no-float ">
+            <i className="fas fa-tachometer-alt" />
+            <p3 id="dashboard"> Dashboard</p3>
+            <div className="row">
+              {/* product skelton */}
+              <AddProductCard
+                handleAddProductClick={this.handleAddProductClick}
+                getProducts={this.getProducts}
+              />
+              {this.props.products.map((item, i) => (
+                <ProductCard
+                  item={item}
+                  key={i}
+                  handleUpdate={this.getProducts}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
 }
 
-function mapStateToProps({ admins }) {
-  return { admins };
+function mapStateToProps({ products }) {
+  return { products };
 }
 
 export default {
   component: connect(
     mapStateToProps,
-    { fetchAdmins }
+    { fetchProducts }
   )(requireAuth(AdminsListPage)),
-  loadData: ({ dispatch }) => dispatch(fetchAdmins())
+  loadData: ({ dispatch }) => dispatch(fetchProducts())
 };
