@@ -13,11 +13,17 @@ class UsersList extends Component {
 
   render() {
     return (
-      <div>
-        Here is a big list of users
-        <ul>
+      <div className="container text-center" style={{ maxWidth: "500px" }}>
+        <h1 style={{ padding: "20px 0 20px 0 " }}>
+          Here Is A big List Of Users
+        </h1>
+        <ul className="list-group">
           {this.props.users.map(user => {
-            return <li key={user.id}>{user.name}</li>;
+            return (
+              <li className="list-group-item" key={user.id}>
+                {user.name}
+              </li>
+            );
           })}
         </ul>
       </div>
