@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { fetchProducts } from "../actions/index";
 import requireAuth from "../components/hocs/requireAuth";
+import AddProductCard from "../components/AddProductCard";
+import ProductCard from "../components/ProductCard";
 
 class AdminsListPage extends Component {
   componentDidMount() {
@@ -21,7 +23,7 @@ class AdminsListPage extends Component {
   render() {
     return (
       <div className="h-100">
-        <div className="row h-100">
+        <div className="row h-1000">
           <div className="col-2 no-flow side-bar text-center">
             <i className="far fa-user-circle" id="admin" />
             <p3 id="admin"> Admin</p3>
@@ -31,10 +33,6 @@ class AdminsListPage extends Component {
             <p3 id="dashboard"> Dashboard</p3>
             <div className="row">
               {/* product skelton */}
-              <AddProductCard
-                handleAddProductClick={this.handleAddProductClick}
-                getProducts={this.getProducts}
-              />
               {this.props.products.map((item, i) => (
                 <ProductCard
                   item={item}
@@ -61,3 +59,7 @@ export default {
   )(requireAuth(AdminsListPage)),
   loadData: ({ dispatch }) => dispatch(fetchProducts())
 };
+// <AddProductCard
+// handleAddProductClick={this.handleAddProductClick}
+// getProducts={this.getProducts}
+// />

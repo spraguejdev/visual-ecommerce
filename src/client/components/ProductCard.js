@@ -10,7 +10,7 @@ class PropertyCard extends React.Component {
       disableMinusButton: false
     };
     this.postItemUpdate = this.postItemUpdate.bind(this);
-    this.getSingleItem = this.getSingleItem.bind(this);
+    // this.getSingleItem = this.getSingleItem.bind(this);
   }
 
   componentDidMount() {
@@ -19,16 +19,16 @@ class PropertyCard extends React.Component {
     this.setState(newState);
   }
 
-  getSingleItem(product_id) {
-    Axios.get("/product/single-item", {
-      params: { product_id: product_id }
-    }).then(res => {
-      var newState = Object.assign(this.state);
-      newState.products = res.data;
-      console.log("this is response data: ", res);
-      this.setState(newState);
-    });
-  }
+  // getSingleItem(product_id) {
+  //   Axios.get("/product/single-item", {
+  //     params: { product_id: product_id }
+  //   }).then(res => {
+  //     var newState = Object.assign(this.state);
+  //     newState.products = res.data;
+  //     console.log("this is response data: ", res);
+  //     this.setState(newState);
+  //   });
+  // }
 
   postItemUpdate(currentProduct) {
     Axios.put("/product-update", currentProduct).then(data => {
@@ -70,7 +70,7 @@ class PropertyCard extends React.Component {
       decrementButtonClass = "btn btn-danger button disabled";
     }
     return (
-      <div className="col-sm-3">
+      <div className="col">
         <div className={qtyLevelStyle}>
           <img className="card-img-top" src={photo} />
           <div className="card-body">

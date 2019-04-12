@@ -81,7 +81,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.fetchAdmins = exports.fetchProducts = exports.fetchCurrentUser = exports.fetchUsers = exports.FETCH_ADMINS = exports.FETCH_CURRENT_USER = exports.FETCH_PRODUCTS = exports.FETCH_USERS = undefined;
 
-var _axios = __webpack_require__(6);
+var _axios = __webpack_require__(3);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -240,16 +240,22 @@ module.exports = require("react-redux");
 /* 3 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router-dom");
+module.exports = require("axios");
 
 /***/ }),
 /* 4 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router-config");
+module.exports = require("react-router-dom");
 
 /***/ }),
 /* 5 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-router-config");
+
+/***/ }),
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -309,12 +315,6 @@ exports.default = [_extends({}, _App2.default, {
 })];
 
 /***/ }),
-/* 6 */
-/***/ (function(module, exports) {
-
-module.exports = require("axios");
-
-/***/ }),
 /* 7 */
 /***/ (function(module, exports) {
 
@@ -337,17 +337,17 @@ var _renderer = __webpack_require__(11);
 
 var _renderer2 = _interopRequireDefault(_renderer);
 
-var _serverStore = __webpack_require__(22);
+var _serverStore = __webpack_require__(24);
 
 var _serverStore2 = _interopRequireDefault(_serverStore);
 
-var _reactRouterConfig = __webpack_require__(4);
+var _reactRouterConfig = __webpack_require__(5);
 
-var _Routes = __webpack_require__(5);
+var _Routes = __webpack_require__(6);
 
 var _Routes2 = _interopRequireDefault(_Routes);
 
-var _expressHttpProxy = __webpack_require__(29);
+var _expressHttpProxy = __webpack_require__(31);
 
 var _expressHttpProxy2 = _interopRequireDefault(_expressHttpProxy);
 
@@ -438,17 +438,17 @@ var _react2 = _interopRequireDefault(_react);
 
 var _server = __webpack_require__(12);
 
-var _reactRouterDom = __webpack_require__(3);
+var _reactRouterDom = __webpack_require__(4);
 
-var _Routes = __webpack_require__(5);
+var _Routes = __webpack_require__(6);
 
 var _Routes2 = _interopRequireDefault(_Routes);
 
 var _reactRedux = __webpack_require__(2);
 
-var _reactRouterConfig = __webpack_require__(4);
+var _reactRouterConfig = __webpack_require__(5);
 
-var _serializeJavascript = __webpack_require__(21);
+var _serializeJavascript = __webpack_require__(23);
 
 var _serializeJavascript2 = _interopRequireDefault(_serializeJavascript);
 
@@ -470,7 +470,7 @@ exports.default = function (req, store, context) {
     )
   ));
 
-  return "\n    <html>\n      <head>\n        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">\n      </head>\n      <body>\n        <div id='root'>\n          " + content + "\n        </div>\n        <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>\n        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>\n        <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>\n      <script>\n        window.INITIAL_STATE = " + (0, _serializeJavascript2.default)(store.getState()) + "\n      </script>\n      <script src='bundle.js'></script>\n      <body>\n    </html>\n  ";
+  return "\n    <html>\n      <head>\n      <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.7.2/css/all.css\" integrity=\"sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr\"\n      crossorigin=\"anonymous\">\n        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">\n        <link rel=\"stylesheet\" href=\"../styles/styles.css\">\n        <style>\n        .side-bar {\n          background-color: #363c42;\n          display: table-row;\n          color: #f5f5f5;\n        }\n        img {\n          max-height: 250px;\n        }\n        \n        .dashboard {\n          background-color: #ededed;\n          display: table-row;\n        }\n        .margin {\n          margin-right: 10px;\n        }\n        .property-card {\n          color: rgba(0, 0, 0, 0.87);\n          /* position: relative; */\n          font-size: 20px;\n          margin: 30px, 10px, 0px, 10px;\n          /* box-shadow: 2px 0px 0px 2px rgba(0, 0, 0, 0.14); */\n          margin-bottom: 30px;\n          border-radius: 6px;\n          margin-right: 20px;\n        }\n        .cardUpper {\n          text-align: right;\n          background: transparent;\n          box-shadow: none;\n          color: #fff;\n          margin: 0 15px;\n          padding: 0;\n          position: relative;\n          border-bottom: none;\n          box-sizing: border-box;\n          display: block;\n        }\n        .cardUpper {\n          text-align: right;\n          background: transparent;\n          box-shadow: none;\n          color: #fff;\n          margin: 0 15px;\n          padding: 0;\n          position: relative;\n          border-bottom: none;\n          box-sizing: border-box;\n          display: block;\n        }\n        \n        .cardLower {\n          border-top: 1px solid#eee;\n          margin-top: 20px;\n          margin: 0 15px 10px;\n          border: 0;\n          padding: 0;\n          display: flex;\n          padding-top: 10px;\n          align-items: center;\n          border-radius: 0;\n          justify-content: space-between;\n          background-color: transparent;\n        }\n        .product-image {\n          /* float: left;\n          padding: 15px;\n          margin-top: -20px;\n          margin-right: 15px; */\n          border-radius: 3px;\n          background-color: #999;\n          background: linear-gradient(60deg, #999, #f3f4f4);\n          box-shadow: 2px 0px 6px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px #999;\n        }\n        \n        .productText {\n          color: #999;\n          margin: 0;\n          font-size: 14px;\n          margin-top: 0;\n          padding-top: 10px;\n          margin-bottom: 0;\n        }\n        html * {\n          -webkit-font-smoothing: antialiased;\n          -moz-osx-font-smoothing: grayscale;\n        }\n        \n        .button {\n          margin: 20px;\n          width: 75px;\n        }\n        \n        .card-style {\n          width: 18rem;\n          margin-top: 75px;\n          box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px #999;\n          border-radius: 6px;\n          margin-right: 40px;\n        }\n        \n        .card-quantity {\n          font-size: 40px;\n        }\n        \n        .card-img-height {\n          height: 25%;\n        }\n        \n        .card-seperator {\n          border-top: 1px solid#eee;\n        }\n        \n        #admin {\n          text-align: center;\n          font-size: 24px;\n          font-weight: 500;\n        }\n        \n        #dashboard-icon {\n          font-size: 24;\n        }\n        #dashboard {\n          text-align: left;\n          font-size: 24px;\n          font-weight: 500;\n        }\n        \n        .safe {\n          border: none;\n        }\n        \n        .low-qty {\n          border: 2px solid red;\n          background-color: red;\n          opacity: 0.6;\n        }\n        \n        .max-height {\n          height: 288px;\n        }\n        \n        .add-product-icon {\n          float: center;\n          font-size: 15px;\n          padding-left: 15px;\n        }\n        \n        .add-product-from {\n        }\n        \n        #add-product-input {\n          padding-top: -5px;\n        }\n        \n        #add-product-button {\n          margin: 5px;\n          width: 75px;\n          text-align: center;\n          padding-bottom: 4px;\n          margin-bottom: 15px;\n        }\n        \n        #center {\n          text-align: center;\n        }\n        \n        </style>\n        </head>\n      <body>\n        <div id='root'>\n          " + content + " \n        </div>\n        <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>\n        <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>\n        <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>\n      <script>\n        window.INITIAL_STATE = " + (0, _serializeJavascript2.default)(store.getState()) + "\n      </script>\n      <script src='bundle.js'></script>\n      <body>\n    </html>\n  ";
 };
 
 /***/ }),
@@ -765,7 +765,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterConfig = __webpack_require__(4);
+var _reactRouterConfig = __webpack_require__(5);
 
 var _Header = __webpack_require__(17);
 
@@ -809,7 +809,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(3);
+var _reactRouterDom = __webpack_require__(4);
 
 var _reactRedux = __webpack_require__(2);
 
@@ -958,6 +958,14 @@ var _requireAuth = __webpack_require__(20);
 
 var _requireAuth2 = _interopRequireDefault(_requireAuth);
 
+var _AddProductCard = __webpack_require__(21);
+
+var _AddProductCard2 = _interopRequireDefault(_AddProductCard);
+
+var _ProductCard = __webpack_require__(22);
+
+var _ProductCard2 = _interopRequireDefault(_ProductCard);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -1001,7 +1009,7 @@ var AdminsListPage = function (_Component) {
         { className: "h-100" },
         _react2.default.createElement(
           "div",
-          { className: "row h-100" },
+          { className: "row h-1000" },
           _react2.default.createElement(
             "div",
             { className: "col-2 no-flow side-bar text-center" },
@@ -1024,12 +1032,8 @@ var AdminsListPage = function (_Component) {
             _react2.default.createElement(
               "div",
               { className: "row" },
-              _react2.default.createElement(AddProductCard, {
-                handleAddProductClick: this.handleAddProductClick,
-                getProducts: this.getProducts
-              }),
               this.props.products.map(function (item, i) {
-                return _react2.default.createElement(ProductCard, {
+                return _react2.default.createElement(_ProductCard2.default, {
                   item: item,
                   key: i,
                   handleUpdate: _this2.getProducts
@@ -1058,6 +1062,10 @@ exports.default = {
     return dispatch((0, _index.fetchProducts)());
   }
 };
+// <AddProductCard
+// handleAddProductClick={this.handleAddProductClick}
+// getProducts={this.getProducts}
+// />
 
 /***/ }),
 /* 20 */
@@ -1078,7 +1086,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(2);
 
-var _reactRouterDom = __webpack_require__(3);
+var _reactRouterDom = __webpack_require__(4);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1130,9 +1138,277 @@ exports.default = function (ChildComponent) {
 
 /***/ }),
 /* 21 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = require("serialize-javascript");
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(0);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _axios = __webpack_require__(3);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var AddProductCard = function (_React$Component) {
+  _inherits(AddProductCard, _React$Component);
+
+  function AddProductCard(props) {
+    _classCallCheck(this, AddProductCard);
+
+    var _this = _possibleConstructorReturn(this, (AddProductCard.__proto__ || Object.getPrototypeOf(AddProductCard)).call(this, props));
+
+    _this.state = {
+      productInfo: {},
+      addProductIsHidden: true
+    };
+
+    _this.handleChange = _this.handleChange.bind(_this);
+    return _this;
+  }
+
+  _createClass(AddProductCard, [{
+    key: "handleChange",
+    value: function handleChange() {
+      var target = event.target;
+      var value = target.value;
+      var name = target.name;
+      var information = this.state.productInfo;
+      if (name === "qty") {
+        value = Number(value);
+      }
+      information["" + name] = value;
+      this.setState({
+        productInfo: information
+      });
+    }
+  }, {
+    key: "postProduct",
+    value: function postProduct(productInfo) {
+      var _this2 = this;
+
+      _axios2.default.post("/products", productInfo).then(function () {
+        _this2.props.getProducts;
+      });
+    }
+  }, {
+    key: "handleAddClick",
+    value: function handleAddClick(e) {
+      e.preventDefault();
+      var productInfo = this.state.productInfo;
+      productInfo.photo = "https://s3-us-west-1.amazonaws.com/zillow-talk-home-component/image1.jpeg";
+      if (!productInfo.photo || !productInfo.name || !productInfo.qty || !productInfo.description) {
+        alert("Please fill in all textboxes");
+        return;
+      }
+      this.postProduct(productInfo);
+      this.setState({
+        addProductIsHidden: !this.state.addProductIsHidden
+      });
+    }
+  }, {
+    key: "handleAddProductClick",
+    value: function handleAddProductClick(e) {
+      e.preventDefault();
+      this.setState({
+        addProductIsHidden: !this.state.addProductIsHidden
+      });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      console.log(this.state);
+      return _react2.default.createElement(
+        "div",
+        null,
+        this.state.addProductIsHidden && _react2.default.createElement(
+          "div",
+          { className: "col-sm-3" },
+          _react2.default.createElement(
+            "div",
+            { className: "card card-style product-card safe" },
+            _react2.default.createElement("img", {
+              className: "card-img-top",
+              src: "./images/checkMark2.png",
+              onClick: this.handleAddProductClick.bind(this)
+            }),
+            _react2.default.createElement(
+              "div",
+              { className: "card-body" },
+              _react2.default.createElement(
+                "h1",
+                { className: "card-title text-center" },
+                "0"
+              ),
+              _react2.default.createElement("p", { className: "card-text card-seperator" }),
+              _react2.default.createElement(
+                "a",
+                { href: "#", className: "btn btn-danger button", name: "dec" },
+                _react2.default.createElement("i", { className: "far fa-minus-square " })
+              ),
+              _react2.default.createElement(
+                "a",
+                { href: "#", className: "btn btn-success button" },
+                _react2.default.createElement("i", { className: "far fa-plus-square" })
+              )
+            )
+          )
+        ),
+        !this.state.addProductIsHidden && _react2.default.createElement(
+          "div",
+          { className: "col-sm-3" },
+          _react2.default.createElement(
+            "div",
+            { className: "card card-style product-card safe padding" },
+            _react2.default.createElement(
+              "form",
+              null,
+              _react2.default.createElement(
+                "div",
+                { className: "form-group add-product-padding" },
+                _react2.default.createElement(
+                  "label",
+                  null,
+                  _react2.default.createElement("i", { className: "fas fa-tags add-product-icon" })
+                ),
+                _react2.default.createElement("input", {
+                  type: "text",
+                  className: "form-control form-control-sm",
+                  name: "name",
+                  onChange: this.handleChange,
+                  required: true
+                })
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "form-group add-product-padding" },
+                _react2.default.createElement(
+                  "label",
+                  null,
+                  _react2.default.createElement("i", { className: "fas fa-tshirt add-product-icon" })
+                ),
+                _react2.default.createElement("input", {
+                  type: "text",
+                  className: "form-control form-control-sm",
+                  name: "product_type",
+                  onChange: this.handleChange,
+                  required: true,
+                  requires: true
+                })
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "form-group" },
+                _react2.default.createElement(
+                  "label",
+                  null,
+                  _react2.default.createElement("i", { className: "fab fa-slack-hash add-product-icon" })
+                ),
+                _react2.default.createElement(
+                  "select",
+                  {
+                    className: "form-control form-control-sm",
+                    name: "qty",
+                    onChange: this.handleChange
+                  },
+                  _react2.default.createElement(
+                    "option",
+                    null,
+                    "1"
+                  ),
+                  _react2.default.createElement(
+                    "option",
+                    null,
+                    "2"
+                  ),
+                  _react2.default.createElement(
+                    "option",
+                    null,
+                    "3"
+                  ),
+                  _react2.default.createElement(
+                    "option",
+                    null,
+                    "4"
+                  ),
+                  _react2.default.createElement(
+                    "option",
+                    null,
+                    "5"
+                  )
+                )
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "form-group" },
+                _react2.default.createElement(
+                  "label",
+                  null,
+                  _react2.default.createElement("i", { className: "far fa-comments add-product-icon" })
+                ),
+                _react2.default.createElement("textarea", {
+                  className: "form-control",
+                  name: "description",
+                  rows: "2",
+                  onChange: this.handleChange,
+                  required: true
+                })
+              ),
+              _react2.default.createElement(
+                "div",
+                { className: "form-group" },
+                _react2.default.createElement(
+                  "label",
+                  { className: "mx-auto" },
+                  _react2.default.createElement("i", { className: "far fa-images add-product-icon" })
+                ),
+                _react2.default.createElement("input", {
+                  type: "file",
+                  className: "form-control-file",
+                  id: "add-product-input",
+                  name: "photo"
+                })
+              ),
+              _react2.default.createElement(
+                "div",
+                { id: "center" },
+                _react2.default.createElement(
+                  "a",
+                  {
+                    onClick: this.handleAddClick.bind(this),
+                    href: "#",
+                    className: "btn btn-success",
+                    id: "add-product-button"
+                  },
+                  _react2.default.createElement("i", { className: "far fa-plus-square" })
+                )
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return AddProductCard;
+}(_react2.default.Component);
+
+exports.default = AddProductCard;
 
 /***/ }),
 /* 22 */
@@ -1145,17 +1421,181 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _redux = __webpack_require__(7);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _reduxThunk = __webpack_require__(23);
+var _react = __webpack_require__(0);
 
-var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
+var _react2 = _interopRequireDefault(_react);
 
-var _axios = __webpack_require__(6);
+var _axios = __webpack_require__(3);
 
 var _axios2 = _interopRequireDefault(_axios);
 
-var _combineReducers = __webpack_require__(24);
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var PropertyCard = function (_React$Component) {
+  _inherits(PropertyCard, _React$Component);
+
+  function PropertyCard(props) {
+    _classCallCheck(this, PropertyCard);
+
+    var _this = _possibleConstructorReturn(this, (PropertyCard.__proto__ || Object.getPrototypeOf(PropertyCard)).call(this, props));
+
+    _this.state = {
+      lowQty: false,
+      currentProduct: {},
+      disableMinusButton: false
+    };
+    _this.postItemUpdate = _this.postItemUpdate.bind(_this);
+    // this.getSingleItem = this.getSingleItem.bind(this);
+    return _this;
+  }
+
+  _createClass(PropertyCard, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      var newState = Object.assign(this.state);
+      newState.currentProduct = this.props.item;
+      this.setState(newState);
+    }
+
+    // getSingleItem(product_id) {
+    //   Axios.get("/product/single-item", {
+    //     params: { product_id: product_id }
+    //   }).then(res => {
+    //     var newState = Object.assign(this.state);
+    //     newState.products = res.data;
+    //     console.log("this is response data: ", res);
+    //     this.setState(newState);
+    //   });
+    // }
+
+  }, {
+    key: "postItemUpdate",
+    value: function postItemUpdate(currentProduct) {
+      _axios2.default.put("/product-update", currentProduct).then(function (data) {
+        // this.getSingleItem(product_id);
+      });
+    }
+  }, {
+    key: "handleIncreaseInventory",
+    value: function handleIncreaseInventory(e) {
+      e.preventDefault();
+      var newState = Object.assign(this.state);
+      var currentQty = this.state.currentProduct.qty;
+      // If quantity level is equal to zero, disable minus button and jump out of method.
+      if (currentQty === 0 && e.target.name === "dec") {
+        newState.disableMinusButton = !newState.disableMinusButton;
+        this.setState(newState);
+        return;
+      } else {
+        newState.disableMinusButton = false;
+        this.setState({ newState: newState });
+      }
+      // Decide if we will increment the qty or decrement the qty
+      if (e.target.name === "dec") {
+        currentQty -= 1;
+      } else {
+        currentQty += 1;
+      }
+      newState.currentProduct.qty = currentQty;
+      this.postItemUpdate(newState.currentProduct);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var qtyLevelStyle = this.props.item.qty <= 5 ? "low-qty card card-style product-card " : " card card-style product-card safe";
+      var _props$item = this.props.item,
+          name = _props$item.name,
+          photo = _props$item.photo,
+          product_id = _props$item.product_id,
+          qty = _props$item.qty,
+          product_type = _props$item.product_type;
+
+      var decrementButtonClass = "btn btn-danger button";
+      if (this.state.disableMinusButton) {
+        decrementButtonClass = "btn btn-danger button disabled";
+      }
+      return _react2.default.createElement(
+        "div",
+        { className: "col" },
+        _react2.default.createElement(
+          "div",
+          { className: qtyLevelStyle },
+          _react2.default.createElement("img", { className: "card-img-top", src: photo }),
+          _react2.default.createElement(
+            "div",
+            { className: "card-body" },
+            _react2.default.createElement(
+              "h1",
+              { className: "card-title text-center" },
+              qty
+            ),
+            _react2.default.createElement("p", { className: "card-text card-seperator" }),
+            _react2.default.createElement(
+              "a",
+              {
+                href: "#",
+                className: decrementButtonClass,
+                name: "dec",
+                onClick: this.handleIncreaseInventory.bind(this)
+              },
+              _react2.default.createElement("i", { className: "far fa-minus-square" })
+            ),
+            _react2.default.createElement(
+              "a",
+              {
+                href: "#",
+                className: "btn btn-success button",
+                onClick: this.handleIncreaseInventory.bind(this)
+              },
+              _react2.default.createElement("i", { className: "far fa-plus-square" })
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return PropertyCard;
+}(_react2.default.Component);
+
+exports.default = PropertyCard;
+
+/***/ }),
+/* 23 */
+/***/ (function(module, exports) {
+
+module.exports = require("serialize-javascript");
+
+/***/ }),
+/* 24 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _redux = __webpack_require__(7);
+
+var _reduxThunk = __webpack_require__(25);
+
+var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
+
+var _axios = __webpack_require__(3);
+
+var _axios2 = _interopRequireDefault(_axios);
+
+var _combineReducers = __webpack_require__(26);
 
 var _combineReducers2 = _interopRequireDefault(_combineReducers);
 
@@ -1176,13 +1616,13 @@ exports.default = function (req) {
 };
 
 /***/ }),
-/* 23 */
+/* 25 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux-thunk");
 
 /***/ }),
-/* 24 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1194,19 +1634,19 @@ Object.defineProperty(exports, "__esModule", {
 
 var _redux = __webpack_require__(7);
 
-var _usersReducer = __webpack_require__(25);
+var _usersReducer = __webpack_require__(27);
 
 var _usersReducer2 = _interopRequireDefault(_usersReducer);
 
-var _productsReducer = __webpack_require__(26);
+var _productsReducer = __webpack_require__(28);
 
 var _productsReducer2 = _interopRequireDefault(_productsReducer);
 
-var _authReducer = __webpack_require__(27);
+var _authReducer = __webpack_require__(29);
 
 var _authReducer2 = _interopRequireDefault(_authReducer);
 
-var _adminsReducer = __webpack_require__(28);
+var _adminsReducer = __webpack_require__(30);
 
 var _adminsReducer2 = _interopRequireDefault(_adminsReducer);
 
@@ -1220,7 +1660,7 @@ exports.default = (0, _redux.combineReducers)({
 });
 
 /***/ }),
-/* 25 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1245,7 +1685,7 @@ exports.default = function () {
 };
 
 /***/ }),
-/* 26 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1270,7 +1710,7 @@ exports.default = function () {
 };
 
 /***/ }),
-/* 27 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1295,7 +1735,7 @@ exports.default = function () {
 var _index = __webpack_require__(1);
 
 /***/ }),
-/* 28 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1320,7 +1760,7 @@ exports.default = function () {
 };
 
 /***/ }),
-/* 29 */
+/* 31 */
 /***/ (function(module, exports) {
 
 module.exports = require("express-http-proxy");
