@@ -6,7 +6,7 @@ import { matchRoutes } from "react-router-config";
 import Routes from "./client/Routes";
 import proxy from "express-http-proxy";
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const app = express();
 
