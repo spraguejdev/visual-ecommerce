@@ -7706,60 +7706,57 @@ var Header = function Header(_ref) {
   // We use anchor tags because we want the entire browser to change the address it's looking at
   _react2.default.createElement(
     "a",
-    { className: "nav-link", href: "/api/logout" },
+    { href: "/api/logout" },
     "Logout"
   ) : _react2.default.createElement(
     "a",
-    { className: "nav-link", href: "/api/auth/google" },
+    { href: "/api/auth/google" },
     "Login"
   );
   return _react2.default.createElement(
     "nav",
-    { className: "navbar navbar-expand-lg navbar navbar-dark bg-dark" },
-    _react2.default.createElement(
-      _reactRouterDom.Link,
-      { to: "/", className: "navbar-brand" },
-      "Visual E-commerce"
-    ),
+    null,
     _react2.default.createElement(
       "div",
-      {
-        className: "collapse navbar-collapse d-flex justify-content-end",
-        id: "navbarNav"
-      },
+      { className: "nav-wrapper grey darken-4" },
+      _react2.default.createElement(
+        _reactRouterDom.Link,
+        { to: "/", className: "brand-logo" },
+        "React SSR"
+      ),
       _react2.default.createElement(
         "ul",
-        { className: "navbar-nav " },
+        { className: "right" },
         _react2.default.createElement(
           "li",
-          { className: "nav-item active" },
+          null,
           _react2.default.createElement(
             _reactRouterDom.Link,
-            { className: "nav-link", to: "/products" },
+            { to: "/products" },
             "Products"
           )
         ),
         _react2.default.createElement(
           "li",
-          { className: "nav-item" },
+          null,
           _react2.default.createElement(
             _reactRouterDom.Link,
-            { className: "nav-link", to: "/users" },
+            { to: "/users" },
             "Users"
           )
         ),
         _react2.default.createElement(
           "li",
-          { className: "nav-item" },
+          null,
           _react2.default.createElement(
             _reactRouterDom.Link,
-            { className: "nav-link", to: "/admins" },
+            { to: "/admins" },
             "Admins"
           )
         ),
         _react2.default.createElement(
           "li",
-          { className: "nav-item" },
+          null,
           authButton
         )
       )
