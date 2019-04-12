@@ -23,7 +23,7 @@ class AdminsListPage extends Component {
   render() {
     return (
       <div className="h-100">
-        <div className="row h-100">
+        <div className="row h-1000">
           <div className="col-2 no-flow side-bar text-center">
             <i className="far fa-user-circle" id="admin" />
             <p3 id="admin"> Admin</p3>
