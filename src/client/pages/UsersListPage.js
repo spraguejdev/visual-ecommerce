@@ -14,9 +14,9 @@ class UsersList extends Component {
   render() {
     return (
       <div className="container text-center" style={{ maxWidth: "500px" }}>
-        <h1 style={{ padding: "20px 0 20px 0 " }}>
-          Here Is A big List Of Users
-        </h1>
+        <h4 style={{ padding: "20px 0 20px 0 " }}>
+          Here Is a big List of Users
+        </h4>
         <ul className="list-group">
           {this.props.users.map(user => {
             return (

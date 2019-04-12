@@ -7,40 +7,27 @@ const Header = ({ auth }) => {
   const authButton = auth ? (
     // We are using making a request to the api, we want it to be proxied though our renderer server, so we set up our cookies with the renderer server and not the api
     // We use anchor tags because we want the entire browser to change the address it's looking at
-    <a className="nav-link" href="/api/logout">
-      Logout
-    </a>
+    <a href="/api/logout">Logout</a>
   ) : (
-    <a className="nav-link" href="/api/auth/google">
-      Login
-    </a>
+    <a href="/api/auth/google">Login</a>
   );
   return (
-    <nav className="navbar navbar-expand-lg navbar navbar-dark bg-dark">
-      <Link to="/" className="navbar-brand">
-        Visual E-commerce
-      </Link>
-      <div
-        className="collapse navbar-collapse d-flex justify-content-end"
-        id="navbarNav"
-      >
-        <ul className="navbar-nav ">
-          <li className="nav-item active">
-            <Link className="nav-link" to="/products">
-              Products
-            </Link>
+    <nav>
+      <div className="nav-wrapper grey darken-4">
+        <Link to="/" className="brand-logo">
+          React SSR
+        </Link>
+        <ul className="right">
+          <li>
+            <Link to="/products">Products</Link>
           </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/users">
-              Users
-            </Link>
+          <li>
+            <Link to="/users">Users</Link>
           </li>
-          <li className="nav-item">
-            <Link className="nav-link" to="/admins">
-              Admins
-            </Link>
+          <li>
+            <Link to="/admins">Admins</Link>
           </li>
-          <li className="nav-item">{authButton}</li>
+          <li>{authButton}</li>
         </ul>
       </div>
     </nav>
