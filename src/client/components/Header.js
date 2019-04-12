@@ -15,7 +15,7 @@ const Header = ({ auth }) => {
     <nav>
       <div className="nav-wrapper grey darken-4">
         <Link to="/" className="brand-logo">
-          React SSR
+          Visual E-commerce (MVP)
         </Link>
         <ul className="right">
           <li>
