@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 8);
+/******/ 	return __webpack_require__(__webpack_require__.s = 9);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -271,27 +271,27 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _HomePage = __webpack_require__(13);
+var _HomePage = __webpack_require__(14);
 
 var _HomePage2 = _interopRequireDefault(_HomePage);
 
-var _UsersListPage = __webpack_require__(14);
+var _UsersListPage = __webpack_require__(15);
 
 var _UsersListPage2 = _interopRequireDefault(_UsersListPage);
 
-var _ProductsPage = __webpack_require__(15);
+var _ProductsPage = __webpack_require__(16);
 
 var _ProductsPage2 = _interopRequireDefault(_ProductsPage);
 
-var _App = __webpack_require__(16);
+var _App = __webpack_require__(17);
 
 var _App2 = _interopRequireDefault(_App);
 
-var _NotFoundPage = __webpack_require__(18);
+var _NotFoundPage = __webpack_require__(19);
 
 var _NotFoundPage2 = _interopRequireDefault(_NotFoundPage);
 
-var _AdminsListPage = __webpack_require__(19);
+var _AdminsListPage = __webpack_require__(20);
 
 var _AdminsListPage2 = _interopRequireDefault(_AdminsListPage);
 
@@ -318,26 +318,32 @@ exports.default = [_extends({}, _App2.default, {
 /* 7 */
 /***/ (function(module, exports) {
 
-module.exports = require("redux");
+module.exports = require("react-helmet");
 
 /***/ }),
 /* 8 */
+/***/ (function(module, exports) {
+
+module.exports = require("redux");
+
+/***/ }),
+/* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-__webpack_require__(9);
+__webpack_require__(10);
 
-var _express = __webpack_require__(10);
+var _express = __webpack_require__(11);
 
 var _express2 = _interopRequireDefault(_express);
 
-var _renderer = __webpack_require__(11);
+var _renderer = __webpack_require__(12);
 
 var _renderer2 = _interopRequireDefault(_renderer);
 
-var _serverStore = __webpack_require__(24);
+var _serverStore = __webpack_require__(25);
 
 var _serverStore2 = _interopRequireDefault(_serverStore);
 
@@ -347,7 +353,7 @@ var _Routes = __webpack_require__(6);
 
 var _Routes2 = _interopRequireDefault(_Routes);
 
-var _expressHttpProxy = __webpack_require__(31);
+var _expressHttpProxy = __webpack_require__(32);
 
 var _expressHttpProxy2 = _interopRequireDefault(_expressHttpProxy);
 
@@ -410,19 +416,19 @@ app.listen(port, function () {
 });
 
 /***/ }),
-/* 9 */
+/* 10 */
 /***/ (function(module, exports) {
 
 module.exports = require("babel-polyfill");
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports) {
 
 module.exports = require("express");
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -436,7 +442,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _server = __webpack_require__(12);
+var _server = __webpack_require__(13);
 
 var _reactRouterDom = __webpack_require__(4);
 
@@ -448,9 +454,11 @@ var _reactRedux = __webpack_require__(2);
 
 var _reactRouterConfig = __webpack_require__(5);
 
-var _serializeJavascript = __webpack_require__(23);
+var _serializeJavascript = __webpack_require__(24);
 
 var _serializeJavascript2 = _interopRequireDefault(_serializeJavascript);
+
+var _reactHelmet = __webpack_require__(7);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -469,18 +477,20 @@ exports.default = function (req, store, context) {
       )
     )
   ));
+  // Create an instance of the helmet library and pull all the tags out
+  var helmet = _reactHelmet.Helmet.renderStatic();
 
-  return "\n    <html>\n      <head>\n      <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.7.2/css/all.css\" integrity=\"sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr\"\n      crossorigin=\"anonymous\">\n        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">\n        <link rel=\"stylesheet\" href=\"../styles/styles.css\">\n        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css\">\n        <style>\n        .side-bar {\n          background-color: #363c42;\n          display: table-row;\n          color: #f5f5f5;\n        }\n        img {\n          max-height: 250px;\n        }\n        \n        .dashboard {\n          background-color: #ededed;\n          display: table-row;\n        }\n        .margin {\n          margin-right: 10px;\n        }\n        .property-card {\n          color: rgba(0, 0, 0, 0.87);\n          /* position: relative; */\n          font-size: 20px;\n          margin: 30px, 10px, 0px, 10px;\n          /* box-shadow: 2px 0px 0px 2px rgba(0, 0, 0, 0.14); */\n          margin-bottom: 30px;\n          border-radius: 6px;\n          margin-right: 20px;\n        }\n        .cardUpper {\n          text-align: right;\n          background: transparent;\n          box-shadow: none;\n          color: #fff;\n          margin: 0 15px;\n          padding: 0;\n          position: relative;\n          border-bottom: none;\n          box-sizing: border-box;\n          display: block;\n        }\n        .cardUpper {\n          text-align: right;\n          background: transparent;\n          box-shadow: none;\n          color: #fff;\n          margin: 0 15px;\n          padding: 0;\n          position: relative;\n          border-bottom: none;\n          box-sizing: border-box;\n          display: block;\n        }\n        \n        .cardLower {\n          border-top: 1px solid#eee;\n          margin-top: 20px;\n          margin: 0 15px 10px;\n          border: 0;\n          padding: 0;\n          display: flex;\n          padding-top: 10px;\n          align-items: center;\n          border-radius: 0;\n          justify-content: space-between;\n          background-color: transparent;\n        }\n        .product-image {\n          /* float: left;\n          padding: 15px;\n          margin-top: -20px;\n          margin-right: 15px; */\n          border-radius: 3px;\n          background-color: #999;\n          background: linear-gradient(60deg, #999, #f3f4f4);\n          box-shadow: 2px 0px 6px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px #999;\n        }\n        \n        .productText {\n          color: #999;\n          margin: 0;\n          font-size: 14px;\n          margin-top: 0;\n          padding-top: 10px;\n          margin-bottom: 0;\n        }\n        html * {\n          -webkit-font-smoothing: antialiased;\n          -moz-osx-font-smoothing: grayscale;\n        }\n        \n        .button {\n          margin: 20px;\n          width: 75px;\n        }\n        \n        .card-style {\n          width: 18rem;\n          margin-top: 75px;\n          box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px #999;\n          border-radius: 6px;\n          margin-right: 40px;\n        }\n        \n        .card-quantity {\n          font-size: 40px;\n        }\n        \n        .card-img-height {\n          height: 25%;\n        }\n        \n        .card-seperator {\n          border-top: 1px solid#eee;\n        }\n        \n        #admin {\n          text-align: center;\n          font-size: 24px;\n          font-weight: 500;\n        }\n        \n        #dashboard-icon {\n          font-size: 24;\n        }\n        #dashboard {\n          text-align: left;\n          font-size: 24px;\n          font-weight: 500;\n        }\n        \n        .safe {\n          border: none;\n        }\n        \n        .low-qty {\n          border: 2px solid red;\n          background-color: red;\n          opacity: 0.6;\n        }\n        \n        .max-height {\n          height: 288px;\n        }\n        \n        .add-product-icon {\n          float: center;\n          font-size: 15px;\n          padding-left: 15px;\n        }\n        \n        .add-product-from {\n        }\n        \n        #add-product-input {\n          padding-top: -5px;\n        }\n        \n        #add-product-button {\n          margin: 5px;\n          width: 75px;\n          text-align: center;\n          padding-bottom: 4px;\n          margin-bottom: 15px;\n        }\n        \n        #center {\n          text-align: center;\n        }\n        \n        </style>\n        </head>\n      <body>\n        <div id='root'>\n          " + content + " \n        </div>\n     \n      <script>\n        window.INITIAL_STATE = " + (0, _serializeJavascript2.default)(store.getState()) + "\n      </script>\n      <script src='bundle.js'></script>\n      <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>\n      <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>\n      <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>\n      <body>\n    </html>\n  ";
+  return "\n    <html>\n      <head>\n      " + helmet.title.toString() + "\n      " + helmet.meta.toString() + "\n      <link rel=\"icon\" type=\"image/png\" href=\"https://s3-us-west-1.amazonaws.com/zillow-talk-home-component/binaryCoders.jpg\"/>\n      <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.7.2/css/all.css\" integrity=\"sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr\"\n      crossorigin=\"anonymous\">\n        <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">\n        <link rel=\"stylesheet\" href=\"../styles/styles.css\">\n        <link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css\">\n        <style>\n        .side-bar {\n          background-color: #363c42;\n          display: table-row;\n          color: #f5f5f5;\n        }\n        img {\n          max-height: 250px;\n        }\n        \n        .dashboard {\n          background-color: #ededed;\n          display: table-row;\n        }\n        .margin {\n          margin-right: 10px;\n        }\n        .property-card {\n          color: rgba(0, 0, 0, 0.87);\n          /* position: relative; */\n          font-size: 20px;\n          margin: 30px, 10px, 0px, 10px;\n          /* box-shadow: 2px 0px 0px 2px rgba(0, 0, 0, 0.14); */\n          margin-bottom: 30px;\n          border-radius: 6px;\n          margin-right: 20px;\n        }\n        .cardUpper {\n          text-align: right;\n          background: transparent;\n          box-shadow: none;\n          color: #fff;\n          margin: 0 15px;\n          padding: 0;\n          position: relative;\n          border-bottom: none;\n          box-sizing: border-box;\n          display: block;\n        }\n        .cardUpper {\n          text-align: right;\n          background: transparent;\n          box-shadow: none;\n          color: #fff;\n          margin: 0 15px;\n          padding: 0;\n          position: relative;\n          border-bottom: none;\n          box-sizing: border-box;\n          display: block;\n        }\n        \n        .cardLower {\n          border-top: 1px solid#eee;\n          margin-top: 20px;\n          margin: 0 15px 10px;\n          border: 0;\n          padding: 0;\n          display: flex;\n          padding-top: 10px;\n          align-items: center;\n          border-radius: 0;\n          justify-content: space-between;\n          background-color: transparent;\n        }\n        .product-image {\n          /* float: left;\n          padding: 15px;\n          margin-top: -20px;\n          margin-right: 15px; */\n          border-radius: 3px;\n          background-color: #999;\n          background: linear-gradient(60deg, #999, #f3f4f4);\n          box-shadow: 2px 0px 6px 0 rgba(0, 0, 0, 0.14), 0 7px 10px -5px #999;\n        }\n        \n        .productText {\n          color: #999;\n          margin: 0;\n          font-size: 14px;\n          margin-top: 0;\n          padding-top: 10px;\n          margin-bottom: 0;\n        }\n        html * {\n          -webkit-font-smoothing: antialiased;\n          -moz-osx-font-smoothing: grayscale;\n        }\n        \n        .button {\n          margin: 20px;\n          width: 75px;\n        }\n        \n        .card-style {\n          width: 18rem;\n          margin-top: 75px;\n          box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px #999;\n          border-radius: 6px;\n          margin-right: 40px;\n        }\n        \n        .card-quantity {\n          font-size: 40px;\n        }\n        \n        .card-img-height {\n          height: 25%;\n        }\n        \n        .card-seperator {\n          border-top: 1px solid#eee;\n        }\n        \n        #admin {\n          text-align: center;\n          font-size: 24px;\n          font-weight: 500;\n        }\n        \n        #dashboard-icon {\n          font-size: 24;\n        }\n        #dashboard {\n          text-align: left;\n          font-size: 24px;\n          font-weight: 500;\n        }\n        \n        .safe {\n          border: none;\n        }\n        \n        .low-qty {\n          border: 2px solid red;\n          background-color: red;\n          opacity: 0.6;\n        }\n        \n        .max-height {\n          height: 288px;\n        }\n        \n        .add-product-icon {\n          float: center;\n          font-size: 15px;\n          padding-left: 15px;\n        }\n        \n        .add-product-from {\n        }\n        \n        #add-product-input {\n          padding-top: -5px;\n        }\n        \n        #add-product-button {\n          margin: 5px;\n          width: 75px;\n          text-align: center;\n          padding-bottom: 4px;\n          margin-bottom: 15px;\n        }\n        \n        #center {\n          text-align: center;\n        }\n        \n        </style>\n        </head>\n      <body>\n        <div id='root'>\n          " + content + " \n        </div>\n     \n      <script>\n        window.INITIAL_STATE = " + (0, _serializeJavascript2.default)(store.getState()) + "\n      </script>\n      <script src='bundle.js'></script>\n      <script src=\"https://code.jquery.com/jquery-3.3.1.slim.min.js\" integrity=\"sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo\" crossorigin=\"anonymous\"></script>\n      <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js\" integrity=\"sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1\" crossorigin=\"anonymous\"></script>\n      <script src=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js\" integrity=\"sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM\" crossorigin=\"anonymous\"></script>\n      <body>\n    </html>\n  ";
 };
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports) {
 
 module.exports = require("react-dom/server");
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -494,12 +504,32 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactHelmet = __webpack_require__(7);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function head() {
+  return _react2.default.createElement(
+    _reactHelmet.Helmet,
+    null,
+    _react2.default.createElement(
+      "title",
+      null,
+      "Code Is Life"
+    ),
+    _react2.default.createElement("meta", { property: "og:title", content: "Code Is Life" }),
+    _react2.default.createElement("meta", {
+      property: "og:url",
+      content: "https://s3-us-west-1.amazonaws.com/zillow-talk-home-component/binaryCoders.jpg"
+    })
+  );
+}
 
 var Home = function Home() {
   return _react2.default.createElement(
     "div",
     { className: "jumbotron jumbotron-fluid" },
+    head(),
     _react2.default.createElement(
       "div",
       { className: "container" },
@@ -580,7 +610,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -599,6 +629,8 @@ var _react2 = _interopRequireDefault(_react);
 var _reactRedux = __webpack_require__(2);
 
 var _index = __webpack_require__(1);
+
+var _reactHelmet = __webpack_require__(7);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -623,11 +655,30 @@ var UsersList = function (_Component) {
       this.props.fetchUsers();
     }
   }, {
+    key: "head",
+    value: function head() {
+      return _react2.default.createElement(
+        _reactHelmet.Helmet,
+        null,
+        _react2.default.createElement(
+          "title",
+          null,
+          this.props.users.length + " Users Loaded"
+        ),
+        _react2.default.createElement("meta", { property: "og:title", content: "Users List" }),
+        _react2.default.createElement("meta", {
+          property: "og:url",
+          content: "https://s3-us-west-1.amazonaws.com/zillow-talk-home-component/binaryCoders.jpg"
+        })
+      );
+    }
+  }, {
     key: "render",
     value: function render() {
       return _react2.default.createElement(
         "div",
         { className: "container text-center", style: { maxWidth: "500px" } },
+        this.head(),
         _react2.default.createElement(
           "h4",
           { style: { padding: "20px 0 20px 0 " } },
@@ -665,7 +716,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -684,6 +735,8 @@ var _react2 = _interopRequireDefault(_react);
 var _reactRedux = __webpack_require__(2);
 
 var _index = __webpack_require__(1);
+
+var _reactHelmet = __webpack_require__(7);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -708,11 +761,30 @@ var ProductsPage = function (_Component) {
       this.props.fetchProducts();
     }
   }, {
+    key: "head",
+    value: function head() {
+      return _react2.default.createElement(
+        _reactHelmet.Helmet,
+        null,
+        _react2.default.createElement(
+          "title",
+          null,
+          this.props.products.length + " Products Loaded"
+        ),
+        _react2.default.createElement("meta", { property: "og:title", content: "Products List" }),
+        _react2.default.createElement("meta", {
+          property: "og:url",
+          content: "https://s3-us-west-1.amazonaws.com/zillow-talk-home-component/binaryCoders.jpg"
+        })
+      );
+    }
+  }, {
     key: "render",
     value: function render() {
       return _react2.default.createElement(
         "div",
         { className: "container text-center", style: { maxWidth: "500px" } },
+        this.head(),
         _react2.default.createElement(
           "h4",
           { style: { padding: "20px 0 20px 0 " } },
@@ -751,7 +823,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -767,7 +839,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterConfig = __webpack_require__(5);
 
-var _Header = __webpack_require__(17);
+var _Header = __webpack_require__(18);
 
 var _Header2 = _interopRequireDefault(_Header);
 
@@ -795,7 +867,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -891,7 +963,7 @@ function mapStateToProps(_ref2) {
 exports.default = (0, _reactRedux.connect)(mapStateToProps)(Header);
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -931,7 +1003,7 @@ exports.default = {
 };
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -951,17 +1023,19 @@ var _reactRedux = __webpack_require__(2);
 
 var _index = __webpack_require__(1);
 
-var _requireAuth = __webpack_require__(20);
+var _requireAuth = __webpack_require__(21);
 
 var _requireAuth2 = _interopRequireDefault(_requireAuth);
 
-var _AddProductCard = __webpack_require__(21);
+var _AddProductCard = __webpack_require__(22);
 
 var _AddProductCard2 = _interopRequireDefault(_AddProductCard);
 
-var _ProductCard = __webpack_require__(22);
+var _ProductCard = __webpack_require__(23);
 
 var _ProductCard2 = _interopRequireDefault(_ProductCard);
+
+var _reactHelmet = __webpack_require__(7);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -984,6 +1058,24 @@ var AdminsListPage = function (_Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.fetchProducts();
+    }
+  }, {
+    key: "head",
+    value: function head() {
+      return _react2.default.createElement(
+        _reactHelmet.Helmet,
+        null,
+        _react2.default.createElement(
+          "title",
+          null,
+          this.props.products + " Products Loaded"
+        ),
+        _react2.default.createElement("meta", { property: "og:title", content: "Adims Products List" }),
+        _react2.default.createElement("meta", {
+          property: "og:url",
+          content: "https://s3-us-west-1.amazonaws.com/zillow-talk-home-component/binaryCoders.jpg"
+        })
+      );
     }
   }, {
     key: "renderAdmins",
@@ -1065,7 +1157,7 @@ exports.default = {
 // />
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1134,7 +1226,7 @@ exports.default = function (ChildComponent) {
 };
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1408,7 +1500,7 @@ var AddProductCard = function (_React$Component) {
 exports.default = AddProductCard;
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1566,13 +1658,13 @@ var PropertyCard = function (_React$Component) {
 exports.default = PropertyCard;
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports) {
 
 module.exports = require("serialize-javascript");
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1582,9 +1674,9 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _redux = __webpack_require__(7);
+var _redux = __webpack_require__(8);
 
-var _reduxThunk = __webpack_require__(25);
+var _reduxThunk = __webpack_require__(26);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
@@ -1592,7 +1684,7 @@ var _axios = __webpack_require__(3);
 
 var _axios2 = _interopRequireDefault(_axios);
 
-var _combineReducers = __webpack_require__(26);
+var _combineReducers = __webpack_require__(27);
 
 var _combineReducers2 = _interopRequireDefault(_combineReducers);
 
@@ -1613,13 +1705,13 @@ exports.default = function (req) {
 };
 
 /***/ }),
-/* 25 */
+/* 26 */
 /***/ (function(module, exports) {
 
 module.exports = require("redux-thunk");
 
 /***/ }),
-/* 26 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1629,21 +1721,21 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _redux = __webpack_require__(7);
+var _redux = __webpack_require__(8);
 
-var _usersReducer = __webpack_require__(27);
+var _usersReducer = __webpack_require__(28);
 
 var _usersReducer2 = _interopRequireDefault(_usersReducer);
 
-var _productsReducer = __webpack_require__(28);
+var _productsReducer = __webpack_require__(29);
 
 var _productsReducer2 = _interopRequireDefault(_productsReducer);
 
-var _authReducer = __webpack_require__(29);
+var _authReducer = __webpack_require__(30);
 
 var _authReducer2 = _interopRequireDefault(_authReducer);
 
-var _adminsReducer = __webpack_require__(30);
+var _adminsReducer = __webpack_require__(31);
 
 var _adminsReducer2 = _interopRequireDefault(_adminsReducer);
 
@@ -1657,7 +1749,7 @@ exports.default = (0, _redux.combineReducers)({
 });
 
 /***/ }),
-/* 27 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1682,7 +1774,7 @@ exports.default = function () {
 };
 
 /***/ }),
-/* 28 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1707,7 +1799,7 @@ exports.default = function () {
 };
 
 /***/ }),
-/* 29 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1732,7 +1824,7 @@ exports.default = function () {
 var _index = __webpack_require__(1);
 
 /***/ }),
-/* 30 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1757,7 +1849,7 @@ exports.default = function () {
 };
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports) {
 
 module.exports = require("express-http-proxy");
