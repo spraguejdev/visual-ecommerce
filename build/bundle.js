@@ -840,7 +840,7 @@ var Header = function Header(_ref) {
       _react2.default.createElement(
         _reactRouterDom.Link,
         { to: "/", className: "brand-logo" },
-        "React SSR"
+        "Visual E-commerce (MVP)"
       ),
       _react2.default.createElement(
         "ul",
