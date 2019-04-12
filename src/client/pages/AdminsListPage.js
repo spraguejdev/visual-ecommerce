@@ -4,12 +4,25 @@ import { fetchProducts } from "../actions/index";
 import requireAuth from "../components/hocs/requireAuth";
 import AddProductCard from "../components/AddProductCard";
 import ProductCard from "../components/ProductCard";
+import { Helmet } from "react-helmet";
 
 class AdminsListPage extends Component {
   componentDidMount() {
     this.props.fetchProducts();
   }
 
+  head() {
+    return (
+      <Helmet>
+        <title>{`${this.props.products} Products Loaded`}</title>
+        <meta property="og:title" content="Adims Products List" />
+        <meta
+          property="og:url"
+          content="https://s3-us-west-1.amazonaws.com/zillow-talk-home-component/binaryCoders.jpg"
+        />
+      </Helmet>
+    );
+  }
   renderAdmins() {
     return this.props.products.map(admin => {
       return (
