@@ -70,7 +70,7 @@ class PropertyCard extends React.Component {
       decrementButtonClass = "btn btn-danger button disabled";
     }
     return (
-      <div className="col-sm-3">
+      <div className="col">
         <div className={qtyLevelStyle}>
           <img className="card-img-top" src={photo} />
           <div className="card-body">
