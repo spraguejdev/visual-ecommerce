@@ -1,8 +1,23 @@
 import React from "react";
+import { Helmet } from "react-helmet";
+
+function head() {
+  return (
+    <Helmet>
+      <title>Code Is Life</title>
+      <meta property="og:title" content="Code Is Life" />
+      <meta
+        property="og:url"
+        content="https://s3-us-west-1.amazonaws.com/zillow-talk-home-component/binaryCoders.jpg"
+      />
+    </Helmet>
+  );
+}
 
 const Home = () => {
   return (
     <div className="jumbotron jumbotron-fluid">
+      {head()}
       <div className="container">
         <h1 className="display-4 text-center">Welcome!</h1>
         <p className="lead text-center" style={{ paddingBottom: "20px" }}>

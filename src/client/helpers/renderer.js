@@ -5,6 +5,7 @@ import Routes from "../Routes";
 import { Provider } from "react-redux";
 import { renderRoutes } from "react-router-config";
 import serialize from "serialize-javascript";
+import { Helmet } from "react-helmet";
 
 // Initialize a static server to be used with our server side codebase
 export default (req, store, context) => {
@@ -16,10 +17,15 @@ export default (req, store, context) => {
       </StaticRouter>
     </Provider>
   );
+  // Create an instance of the helmet library and pull all the tags out
+  const helmet = Helmet.renderStatic();
 
   return `
     <html>
       <head>
+      ${helmet.title.toString()}
+      ${helmet.meta.toString()}
+      <link rel="icon" type="image/png" href="https://s3-us-west-1.amazonaws.com/zillow-talk-home-component/binaryCoders.jpg"/>
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
       crossorigin="anonymous">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
