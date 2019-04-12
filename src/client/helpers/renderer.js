@@ -26,7 +26,7 @@ export default (req, store, context) => {
         <link rel="stylesheet" href="../styles/styles.css">
         <style>
         .side-bar {
-          background-color: #080808;
+          background-color: #363c42;
           display: table-row;
           color: #f5f5f5;
         }
@@ -123,7 +123,7 @@ export default (req, store, context) => {
           margin-top: 75px;
           box-shadow: 0px 10px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px #999;
           border-radius: 6px;
-          margin-right: 20px;
+          margin-right: 40px;
         }
         
         .card-quantity {
