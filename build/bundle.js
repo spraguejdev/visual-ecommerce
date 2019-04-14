@@ -81,7 +81,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.fetchAdmins = exports.fetchProducts = exports.fetchCurrentUser = exports.fetchUsers = exports.FETCH_ADMINS = exports.FETCH_CURRENT_USER = exports.FETCH_PRODUCTS = exports.FETCH_USERS = undefined;
 
-var _axios = __webpack_require__(3);
+var _axios = __webpack_require__(4);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -240,22 +240,28 @@ module.exports = require("react-redux");
 /* 3 */
 /***/ (function(module, exports) {
 
-module.exports = require("axios");
+module.exports = require("react-helmet");
 
 /***/ }),
 /* 4 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router-dom");
+module.exports = require("axios");
 
 /***/ }),
 /* 5 */
 /***/ (function(module, exports) {
 
-module.exports = require("react-router-config");
+module.exports = require("react-router-dom");
 
 /***/ }),
 /* 6 */
+/***/ (function(module, exports) {
+
+module.exports = require("react-router-config");
+
+/***/ }),
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -315,12 +321,6 @@ exports.default = [_extends({}, _App2.default, {
 })];
 
 /***/ }),
-/* 7 */
-/***/ (function(module, exports) {
-
-module.exports = require("react-helmet");
-
-/***/ }),
 /* 8 */
 /***/ (function(module, exports) {
 
@@ -347,9 +347,9 @@ var _serverStore = __webpack_require__(25);
 
 var _serverStore2 = _interopRequireDefault(_serverStore);
 
-var _reactRouterConfig = __webpack_require__(5);
+var _reactRouterConfig = __webpack_require__(6);
 
-var _Routes = __webpack_require__(6);
+var _Routes = __webpack_require__(7);
 
 var _Routes2 = _interopRequireDefault(_Routes);
 
@@ -366,7 +366,7 @@ var app = (0, _express2.default)();
 // Proxy for api, any route trying to access this route will be sent off to the api
 app.use("/api", (0, _expressHttpProxy2.default)("http://react-ssr-api.herokuapp.com", {
   proxyReqOptDecorator: function proxyReqOptDecorator(opts) {
-    opts.headers["x-forwarded-host"] = "localhost:" + port;
+    opts.headers["x-forwarded-host"] = "https://visual-ecommerce.herokuapp.com/";
     return opts;
   }
 }));
@@ -444,21 +444,21 @@ var _react2 = _interopRequireDefault(_react);
 
 var _server = __webpack_require__(13);
 
-var _reactRouterDom = __webpack_require__(4);
+var _reactRouterDom = __webpack_require__(5);
 
-var _Routes = __webpack_require__(6);
+var _Routes = __webpack_require__(7);
 
 var _Routes2 = _interopRequireDefault(_Routes);
 
 var _reactRedux = __webpack_require__(2);
 
-var _reactRouterConfig = __webpack_require__(5);
+var _reactRouterConfig = __webpack_require__(6);
 
 var _serializeJavascript = __webpack_require__(24);
 
 var _serializeJavascript2 = _interopRequireDefault(_serializeJavascript);
 
-var _reactHelmet = __webpack_require__(7);
+var _reactHelmet = __webpack_require__(3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -504,7 +504,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactHelmet = __webpack_require__(7);
+var _reactHelmet = __webpack_require__(3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -630,7 +630,7 @@ var _reactRedux = __webpack_require__(2);
 
 var _index = __webpack_require__(1);
 
-var _reactHelmet = __webpack_require__(7);
+var _reactHelmet = __webpack_require__(3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -736,7 +736,7 @@ var _reactRedux = __webpack_require__(2);
 
 var _index = __webpack_require__(1);
 
-var _reactHelmet = __webpack_require__(7);
+var _reactHelmet = __webpack_require__(3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -837,7 +837,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterConfig = __webpack_require__(5);
+var _reactRouterConfig = __webpack_require__(6);
 
 var _Header = __webpack_require__(18);
 
@@ -881,7 +881,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(4);
+var _reactRouterDom = __webpack_require__(5);
 
 var _reactRedux = __webpack_require__(2);
 
@@ -1035,7 +1035,7 @@ var _ProductCard = __webpack_require__(23);
 
 var _ProductCard2 = _interopRequireDefault(_ProductCard);
 
-var _reactHelmet = __webpack_require__(7);
+var _reactHelmet = __webpack_require__(3);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1175,7 +1175,7 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRedux = __webpack_require__(2);
 
-var _reactRouterDom = __webpack_require__(4);
+var _reactRouterDom = __webpack_require__(5);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -1242,7 +1242,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _axios = __webpack_require__(3);
+var _axios = __webpack_require__(4);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -1516,7 +1516,7 @@ var _react = __webpack_require__(0);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _axios = __webpack_require__(3);
+var _axios = __webpack_require__(4);
 
 var _axios2 = _interopRequireDefault(_axios);
 
@@ -1680,7 +1680,7 @@ var _reduxThunk = __webpack_require__(26);
 
 var _reduxThunk2 = _interopRequireDefault(_reduxThunk);
 
-var _axios = __webpack_require__(3);
+var _axios = __webpack_require__(4);
 
 var _axios2 = _interopRequireDefault(_axios);
 
