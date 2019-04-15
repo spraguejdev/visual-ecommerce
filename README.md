@@ -18,6 +18,7 @@
 2. [Requirements](#requirements)
 3. [Development](#development)
 4. [Installing Dependencies](#Installing Dependencies)
+
 ## Usage
 
 > From the root directory of this service, grab dependencies (see below). Nagivate to yor terminal, then use the command npm run dev to transpose the es6 files into a bundle using webpack. Head to your browser and type in localhost:3000 and enjoy the experience!
@@ -27,6 +28,8 @@
 > Mush have node installed on your workstation
 
 ## Development
+
+> 
 
 ## Installing Dependencies
 
