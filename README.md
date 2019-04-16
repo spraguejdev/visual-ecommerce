@@ -13,8 +13,9 @@
 
 1. [Usage](#Usage)
 2. [Requirements](#requirements)
-3. [Development](#development)
-4. [Development](#development)
+3. [Development](#dependencies)
+4. [Versioning](#versioning)
+5. [Authors](#authors)
 
 ## Usage
 
@@ -24,11 +25,7 @@
 
 > Mush have node installed on your workstation
 
-## Development
-
-> 
-
-## Installing Dependencies
+## Dependencies
 
 From within the root directory:
 
