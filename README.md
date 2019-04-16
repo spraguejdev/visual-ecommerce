@@ -1,11 +1,8 @@
 # Project Name
 
 > This a project that is currently in progress. What you see here is a full-stack Server Side Rendered app that incorporates React, Redux, React Router, Webpack, Babel, OAuth Authentication, Bootstratp and ES6.
-
 > The end goal of the project is to give those with reading disabilities the oppurtunity to manage their e-commerce store in a visual manner, curing the need for accessability.
-
 > There will be many more features built within the following weeks.
-
 > Stay tuned for updates!
 
 ## Related Projects
@@ -17,7 +14,7 @@
 1. [Usage](#Usage)
 2. [Requirements](#requirements)
 3. [Development](#development)
-4. [Installing Dependencies](#Installing Dependencies)
+4. [Installing Dependencies](#installing dependencies)
 
 ## Usage
 
