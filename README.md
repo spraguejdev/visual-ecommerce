@@ -14,7 +14,7 @@
 1. [Usage](#Usage)
 2. [Requirements](#requirements)
 3. [Development](#development)
-4. [Installing Dependencies](#installing dependencies)
+4. [Development](#development)
 
 ## Usage
 
