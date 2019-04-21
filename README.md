@@ -14,7 +14,7 @@
 1. [Usage](#Usage)
 2. [Requirements](#requirements)
 3. [Development](#dependencies)
-4. [Licensing](#licensing)
+4. [License](#license)
 5. [Versioning](#versioning)
 6. [Authors](#authors)
 
