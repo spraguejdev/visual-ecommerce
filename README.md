@@ -14,8 +14,9 @@
 1. [Usage](#Usage)
 2. [Requirements](#requirements)
 3. [Development](#dependencies)
-4. [Versioning](#versioning)
-5. [Authors](#authors)
+4. [Licensing](#licensing)
+5. [Versioning](#versioning)
+6. [Authors](#authors)
 
 ## Usage
 
@@ -27,15 +28,18 @@
 
 ## Dependencies
 
-From within the root directory:
+- From within the root directory:
 
-npm install -g webpack
-npm install
+- npm install -g webpack
+- npm install
+
+## License
+- This project is licensed under the MIT License - see the LICENSE.md file for details.
 
 ## Versioning
-I use Git for versioning.
+- I use Git for versioning.
 
 ## Authors
-John Sprague - Software Engineer
+- **John Sprague** - Software Engineer
 
 
